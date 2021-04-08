@@ -1,5 +1,7 @@
 import {app, BrowserWindow} from 'electron';
 
+const {createConnection} = eval('require')('typeorm');
+
 console.log('main process', __dirname);
 
 app.on('ready', () => {

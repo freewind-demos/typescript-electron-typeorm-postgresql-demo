@@ -4,7 +4,16 @@ import {User} from "../../entity/User";
 import {Profile} from '../../entity/Profile';
 
 export async function loadData() {
-  const connection = await createConnection();
+  const connection = await createConnection({
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "demo",
+    "password": "123456",
+    "database": "typescript-electron-typeorm-postgresql-demo",
+    synchronize: true,
+    entities: [Profile, User],
+  });
   console.log("Inserting a new user into the database...");
 
   const profile = new Profile();

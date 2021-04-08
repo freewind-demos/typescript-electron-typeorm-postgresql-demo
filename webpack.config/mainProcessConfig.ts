@@ -12,6 +12,7 @@ const mainProcessConfig: Configuration = {
   resolve: {
     extensions: ['.ts', '.js'],
   },
+  externals: ['typeorm'],
   module: {
     rules: [{
       test: /\.ts$/,

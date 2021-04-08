@@ -11,7 +11,11 @@ const rendererProcessConfig: Configuration = {
     filename: 'index.bundle.js',
   },
   resolve: {
+    mainFields: ['main'],
     extensions: ['.ts', '.tsx', '.js'],
+    // !!! The default value is `browser`, we have to override it to let webpack ignore
+    // the `browser` fields in typeorm package.json
+    aliasFields: ['main']
   },
   module: {
     rules: [{
@@ -24,6 +28,9 @@ const rendererProcessConfig: Configuration = {
       test: /\.tsx?$/,
       loader: 'ts-loader',
       exclude: /node_modules/,
+      resolve: {
+        mainFields: ["main"]
+      }
     }],
   },
   plugins: [

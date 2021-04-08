@@ -4,9 +4,9 @@
    "port": 5432,
    "username": "demo",
    "password": "123456",
-   "database": "typescript-typeorm-postgresql-demo",
-   "synchronize": true,
-   "logging": false,
+   "database": "typescript-electron-typeorm-postgresql-demo",
+   "synchronize": false,
+   "logging": true,
    "entities": [
       "src/entity/**/*.ts"
    ],
